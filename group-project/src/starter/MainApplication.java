@@ -31,8 +31,11 @@ public class MainApplication extends GraphicsApplication {
 	private String currScreen = "";
 	private GCompound levelCompound = new GCompound();
 
-	// Physics and level
+	// Physics
 	private PhysicsEngine Physics;
+	
+	// Levels
+	private LevelLoader levelLoaderInstance;
 	private Level levelOne = new Level("/levels/OfficialLevel1/OfficialLevel1.tmx", "/SpriteSheet/tileset.png");
 	private Level currentLevel;
 
@@ -45,6 +48,10 @@ public class MainApplication extends GraphicsApplication {
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		sheetNew = new SpriteSheet("/SpriteSheet/MarioFinalChar.png");//C
+		
+		// Gets the level loader instance
+		levelLoaderInstance = LevelLoader.getInstance();
+		
 		for (int i = 0; i < playerArray.length; i++) {
 			playerArray[i] = new Sprite (sheetNew, i, 0);
 			playerGImage[i] = new GImage (playerArray[i].getBufferedImage());

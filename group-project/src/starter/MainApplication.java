@@ -5,8 +5,8 @@ import acm.graphics.*;
 
 public class MainApplication extends GraphicsApplication {
 	// Window Options
-	public static final int WINDOW_WIDTH = 800;
-	public static final int WINDOW_HEIGHT = 600;
+	public static final int WINDOW_WIDTH = WindowDimensions.windowWidth;
+	public static final int WINDOW_HEIGHT = WindowDimensions.windowHeight;
 	
 	// Sound Files
 	public static final String MUSIC_FOLDER = "sound";
@@ -33,7 +33,7 @@ public class MainApplication extends GraphicsApplication {
 
 	// Physics and level
 	private PhysicsEngine Physics;
-	private Level levelOne = new Level("/levels/OfficialLevel1/OfficialLevel1.tmx", "/SpriteSheet/tileset.png", WINDOW_HEIGHT);
+	private Level levelOne = new Level("/levels/OfficialLevel1/OfficialLevel1.tmx", "/SpriteSheet/tileset.png");
 	private Level currentLevel;
 
 	// Boolean for inputs

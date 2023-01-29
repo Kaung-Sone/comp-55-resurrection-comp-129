@@ -31,10 +31,10 @@ public class Level {
 	 * @param pathToSpriteSheet - Path to sprite sheet, MUST BE UNDER /SpriteSheet/ FOLDER, because java is dumb when it comes to file paths
 	 */
 
-	Level(String pathToTMX, String pathToSpriteSheet, int windowHeight) {
+	Level(String pathToTMX, String pathToSpriteSheet) {
 		this.pathToTMX = pathToTMX;
 		this.pathToSpriteSheet = pathToSpriteSheet;
-		this.windowHeight = windowHeight;
+		this.windowHeight = WindowDimensions.windowHeight;
 		reset();
 	}
 

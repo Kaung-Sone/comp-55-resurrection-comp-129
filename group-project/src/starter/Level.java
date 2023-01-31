@@ -21,9 +21,10 @@ public class Level {
 	public static ArrayList<GRect> hitboxes_debug = new ArrayList<GRect>();
 	public static ArrayList<GPoint> goomba_points = new ArrayList<GPoint>();
 	
-	String pathToTMX;
-	String pathToSpriteSheet;
-	int windowHeight;
+	private String pathToTMX;
+	private String pathToSpriteSheet;
+	private int windowHeight;
+	private String levelName;
 
 	/**
 	 * Constructor for the TMXLevelReader class
@@ -35,6 +36,19 @@ public class Level {
 		this.pathToTMX = pathToTMX;
 		this.pathToSpriteSheet = pathToSpriteSheet;
 		this.windowHeight = WindowDimensions.windowHeight;
+		reset();
+	}
+	
+	/**
+	 * Constructor for the TMXLevelReader class
+	 * @param pathToTMX - Path to tmx files under levels folder
+	 * @param pathToSpriteSheet - Path to sprite sheet, MUST BE UNDER /SpriteSheet/ FOLDER, because java is dumb when it comes to file paths
+	 */
+	Level(String pathToTMX, String pathToSpriteSheet, String levelName) {
+		this.pathToTMX = pathToTMX;
+		this.pathToSpriteSheet = pathToSpriteSheet;
+		this.windowHeight = WindowDimensions.windowHeight;
+		this.levelName = levelName;
 		reset();
 	}
 
@@ -152,5 +166,9 @@ public class Level {
 			hitboxes_debug.add(temp);
 		}
 		System.out.println("Debug hitbox overlays generated");
+	}
+	
+	public String getLevelName() {
+		return levelName;
 	}
 }

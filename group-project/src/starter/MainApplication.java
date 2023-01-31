@@ -51,6 +51,17 @@ public class MainApplication extends GraphicsApplication {
 		
 		// Gets the level loader instance
 		levelLoaderInstance = LevelLoader.getInstance();
+		levelOne = levelLoaderInstance.getLevelByName("OfficialLevsel1");
+		if (levelOne != null) {
+			
+		} else {
+			throw new Error("Level to load is null!");
+		}
+		
+		System.out.println("Listing levels...");
+		for (String name : levelLoaderInstance.getLevelNames()) {
+			System.out.println(name);
+		}
 		
 		for (int i = 0; i < playerArray.length; i++) {
 			playerArray[i] = new Sprite (sheetNew, i, 0);

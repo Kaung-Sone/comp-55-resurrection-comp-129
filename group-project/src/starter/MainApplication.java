@@ -51,7 +51,7 @@ public class MainApplication extends GraphicsApplication {
 		
 		// Gets the level loader instance
 		levelLoaderInstance = LevelLoader.getInstance();
-		levelOne = levelLoaderInstance.getLevelByName("OfficialLevsel1");
+		levelOne = levelLoaderInstance.getLevelByName("OfficialLevel1");
 		if (levelOne != null) {
 			
 		} else {

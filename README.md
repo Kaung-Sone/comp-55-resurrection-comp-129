@@ -26,3 +26,16 @@ For each subdirectory...
     Else
         Log a warning message saying that the current subdirectory is skipped due to missing files
 ```
+
+## Demonstration
+To observe the feature working change the level name that is inside `levelLoaderInstance.getLevelByName()` in `MainApplication.java line 54` to one of the below: 
+- `OfficialLevel1`
+- `smallertestlevel`
+- `test`
+
+The final line should look like this:   
+```
+MainApplication.java:54|  levelOne = levelLoaderInstance.getLevelByName("Your level name here");
+```
+
+These names come from the `level.*` resources that can be found under the `media` folder.
